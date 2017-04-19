@@ -8,10 +8,14 @@ This repo attempts to reporduce this amazing work by Kaiming He.
 - [ ] Allowing larger initial learning rate. 
 - [ ] Chooseing proper initial weights.
 ## How-to
-1. Download coco dataset, place it into `./data`, then run `python download_and_convert_data.py` to build tf-record. It takes a while.
-2. Download pretrained resnet50 model, `wget http://download.tensorflow.org/models/resnet_v1_50_2016_08_28.tar.gz`, unzip it, place it into `./data/pretrained_models/`
-3. run `python test/resnet50_test.py` for training 
-4. There are certainly some bugs, please report them back, and let's solve them togather.
+1. `git clone https://github.com/CharlesShang/FastMaskRCNN.git`
+2. `cd FastMaskRCNN/libs/datasets/pycocotools && make`
+3. `cd FastMaskRCNN && nano download_and_convert_data.py`
+    Rename all appearances of dataset_name and dataset_dir
+4. Download coco dataset, place it into `./data`, then run `python download_and_convert_data.py` to build tf-record. It takes a while.
+5. Download pretrained resnet50 model, `wget http://download.tensorflow.org/models/resnet_v1_50_2016_08_28.tar.gz`, unzip it, place it into `./data/pretrained_models/`
+6. run `python test/resnet50_test.py` for training 
+7. There are certainly some bugs, please report them back, and let's solve them togather.
 ## Timeline
 - [x] ROIAlign
 - [x] COCO Data Provider
