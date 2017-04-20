@@ -10,8 +10,9 @@ This repo attempts to reporduce this amazing work by Kaiming He.
 ## How-to
 1. `git clone https://github.com/CharlesShang/FastMaskRCNN.git`
 2. `cd FastMaskRCNN/libs && make`
-3. `cd FastMaskRCNN/libs/datasets/pycocotools && make`
-4. `cd FastMaskRCNN && nano download_and_convert_data.py`
+3. `cd datasets/pycocotools && make`
+4. `cd ../../.. && mkdir train && mkdir train/maskrcnn`
+4. `nano download_and_convert_data.py`
     Rename all appearances of dataset_name and dataset_dir
 5. Download coco dataset, place it into `./data`, then run `python download_and_convert_data.py` to build tf-record. It takes a while.
 6. Download pretrained resnet50 model, `wget http://download.tensorflow.org/models/resnet_v1_50_2016_08_28.tar.gz`, unzip it, place it into `./data/pretrained_models/`
